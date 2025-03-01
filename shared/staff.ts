@@ -1,4 +1,4 @@
-import { IWorkers } from "../types/IWorkers"
+import { IWorkers } from "@/types/IWorkers"
 
 const Staff: IWorkers[]= [
     {id: 1, img: null, name: 'Русеев Максим Алексеевич', position: 'Frontend-developer', currently: null, tasks: null, taskCompleted: null },

@@ -1,6 +1,6 @@
 "use client"
 
-import ListEmployees from "../../components/ListEmployees";
+import ListEmployees from "@/components/ListEmployees";
 
 export default function Home() {
 

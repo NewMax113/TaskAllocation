@@ -1,6 +1,6 @@
 import { FC } from "react"
 import EmployeeCard from "./EmployeeCard"
-import Staff from "../shared/staff"
+import Staff from "@/shared/staff"
 
 const ListEmployees: FC = () => {
     return (

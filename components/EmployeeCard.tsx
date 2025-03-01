@@ -4,7 +4,7 @@ import { FC, useState } from "react";
 import ModalCard from "./ModalCard";
 import ContendCard from "./ContentCard";
 import CardTools from "./CardTools";
-import { IWorkers } from "../types/IWorkers";
+import { IWorkers } from "@/types/IWorkers";
 
 
 const EmployeeCard: FC<IWorkers> = ({ id, img, name, position, currently, tasks, taskCompleted }) => {
@@ -23,7 +23,7 @@ const EmployeeCard: FC<IWorkers> = ({ id, img, name, position, currently, tasks,
           } />
           <Box sx={{ width: '100%', height: '100%', display: 'flex', alignItems: 'baseline', justifyContent: 'space-between' }}>
             <ContendCard {...{ name, tasks, position, currently }} />
-            <CardTools {...{tasks, handleClick}}/>
+            <CardTools {...{tasks, handleClick, id}}/>
           </Box>
         </Card>
       </Box>
