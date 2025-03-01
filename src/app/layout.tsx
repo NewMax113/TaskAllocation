@@ -1,3 +1,4 @@
+import { Container } from "@mui/material";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,7 +13,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <Container>
+          <header></header>
+          <main>{children}</main>
+          <footer></footer>
+        </Container>
       </body>
     </html>
   );
