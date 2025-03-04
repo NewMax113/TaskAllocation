@@ -1,6 +1,6 @@
 import { Box, Button } from "@mui/material"
 import { FC } from "react"
-import { ICardTools } from "@/types/MainTypes"
+import { ICardTools } from "@/types/AppTypes"
 import Link from "next/link"
 
 
@@ -16,7 +16,7 @@ const CardTools: FC<ICardTools> = ({ handleClick, tasks, id }) => {
                 </Button>
             </Link>
             <Button
-                disabled={!tasks}
+                disabled={tasks.length<1}
                 onClick={handleClick}
                 sx={{
                     cursor: 'pointer', minWidth: 32, borderRadius: 3, m: 1, '&:hover': { transform: 'scale(1.2)' }

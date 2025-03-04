@@ -1,6 +1,6 @@
 import { Box } from "@mui/material"
 import { FC } from "react"
-import { IContendCard } from "../types/MainTypes"
+import { IContendCard } from "../../types/AppTypes"
 
 
 const ContendCard: FC<IContendCard> = ({ name, position, currently, tasks }) => {

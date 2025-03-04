@@ -3,8 +3,8 @@ import { Avatar, Box, Card, CardHeader} from "@mui/material";
 import { FC, useState } from "react";
 import ModalCard from "./ModalCard";
 import ContendCard from "./ContentCard";
-import CardTools from "./CardTools";
 import { IWorkers } from "@/types/IWorkers";
+import CardTools from "./CardTools";
 
 
 const EmployeeCard: FC<IWorkers> = ({ id, img, name, position, currently, tasks, taskCompleted }) => {
@@ -28,7 +28,7 @@ const EmployeeCard: FC<IWorkers> = ({ id, img, name, position, currently, tasks,
         </Card>
       </Box>
 
-      {isDropDownTasks && tasks && (
+      {isDropDownTasks && (tasks.length > 0) && (
         <ModalCard {...{ isDropDownTasks, tasks, handleClick }} />
       )}
     </>

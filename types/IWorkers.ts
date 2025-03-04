@@ -4,6 +4,6 @@ export interface IWorkers {
     name: string,
     position: string,
     currently: string | null,
-    tasks: string[] | null,
+    tasks: string[],
     taskCompleted: string[] | null
 }

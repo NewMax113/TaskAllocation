@@ -1,7 +1,7 @@
 import { Box, Button, CardContent, Zoom } from "@mui/material"
 import { FC } from "react"
 import ListTasks from "./ListTasks"
-import { IModalCard } from "../types/MainTypes"
+import { IModalCard } from "../../types/AppTypes"
 
 
 const ModalCard: FC<IModalCard> = ({ isDropDownTasks, tasks, handleClick }) => {
