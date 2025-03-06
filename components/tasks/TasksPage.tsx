@@ -11,32 +11,38 @@ import GeneralTaskList from "./GeneralTaskList";
 import TaskUpdateButton from "./TaskUpdateButton";
 
 
-const TasksPage: FC<{ id: number }> = observer(({ id }) => {
-    const [workerId, setWorkerId] = useState<IWorkers['id']>(id);
+const TasksPage: FC<{ id?: number }> = observer(({ id }) => {
+    const [workerId, setWorkerId] = useState<IWorkers['id'] | null>(id || null);
     const [generalTaskList, setGeneralTaskList] = useState<string[]>([])
     const [employeeTasks, setEmployeeTasks] = useState<IWorkers['tasks']>([])
 
     return (
         <Grid2 container spacing={2}>
             <Grid2 size={{ xs: 6, md: 8 }}>
-                <ListOfEmployees {...{ id, setEmployeeTasks, workerId, setWorkerId }} />
+                <ListOfEmployees {...{ setEmployeeTasks, workerId, setWorkerId }} />
             </Grid2>
 
-            <Grid2 size={{ xs: 6, md: 4 }}>
-                <TaskEntryForm {...{ generalTaskList, setGeneralTaskList }} />
-            </Grid2>
+            {workerId != null && (
+                <>
+                    <Grid2 size={{ xs: 6, md: 4 }}>
+                        <TaskEntryForm {...{ generalTaskList, setGeneralTaskList }} />
+                    </Grid2>
 
-            <Grid2 size={{ xs: 6, md: 8 }}>
-                <EmployeeTasks {...{ setEmployeeTasks, employeeTasks }} />
-            </Grid2>
+                    <Grid2 size={{ xs: 6, md: 8 }}>
+                        <EmployeeTasks {...{ setEmployeeTasks, employeeTasks }} />
+                    </Grid2>
 
-            <Grid2 size={{ xs: 6, md: 4 }}>
-                <GeneralTaskList {...{generalTaskList, setGeneralTaskList}}/>
-            </Grid2>
+                    <Grid2 size={{ xs: 6, md: 4 }}>
+                        <GeneralTaskList {...{ generalTaskList, setGeneralTaskList }} />
+                    </Grid2>
 
-            <Grid2 >
-                <TaskUpdateButton {...{ workerId, employeeTasks }} />
-            </Grid2>
+                    <Grid2 >
+                        <TaskUpdateButton {...{ workerId, employeeTasks }} />
+                    </Grid2>
+                </>
+            )}
+
+
         </Grid2>
     )
 })

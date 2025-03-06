@@ -1,3 +1,4 @@
+import Toolbar from "@/shared/components/Toolbar";
 import { Container } from "@mui/material";
 import type { Metadata } from "next";
 
@@ -14,10 +15,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Container>
-          <header></header>
           <main>{children}</main>
-          <footer></footer>
         </Container>
+        <Toolbar/>
+        <footer></footer>
       </body>
     </html>
   );

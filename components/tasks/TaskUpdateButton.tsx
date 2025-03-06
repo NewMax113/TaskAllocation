@@ -10,7 +10,7 @@ const TaskUpdateButton: FC<ITaskUpdateButton> = observer(({workerId, employeeTas
     const updatingTask = RootStore.classStaff.updatingTask
 
     const updateTasksWorkers = () => {
-        updatingTask(workerId, employeeTasks)
+        workerId != null && updatingTask(workerId, employeeTasks)
     }
 
     return (

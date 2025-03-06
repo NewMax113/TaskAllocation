@@ -14,10 +14,9 @@ export interface IEmployeeTasks {
 }
 
 export interface IListOfEmployees {
-    id: number,
     setEmployeeTasks: Dispatch<SetStateAction<IWorkers['tasks']>>
-    workerId: IWorkers['id']
-    setWorkerId: Dispatch<SetStateAction<IWorkers['id']>>
+    workerId: IWorkers['id'] | null
+    setWorkerId: Dispatch<SetStateAction<IWorkers['id'] | null>>
 }
 
 export interface ITask {
@@ -26,6 +25,6 @@ export interface ITask {
 }
 
 export interface ITaskUpdateButton {
-    workerId: IWorkers['id']
+    workerId: IWorkers['id'] | null
     employeeTasks: IWorkers['tasks']
 }
